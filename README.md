@@ -34,6 +34,8 @@ After adding the server, your client will open a browser window to authorize via
 
 ## Tools
 
+All tools return structured output (JSON Schema defined via `outputSchema`), compatible with OpenAI, ChatGPT Desktop, and any client that supports the MCP structured content spec.
+
 ### Read tools (always available)
 
 | Tool | Description |
