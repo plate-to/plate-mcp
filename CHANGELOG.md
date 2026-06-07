@@ -2,6 +2,22 @@
 
 ## 2026-06-07 (latest)
 
+### Added
+
+- **8 new batch tools for bulk operations** — reduces confirmation prompts in ChatGPT and other AI clients that ask once per tool call. Use these instead of calling single-item tools in a loop:
+  - `create_tasks` — create up to 50 tasks atomically
+  - `update_tasks` — update up to 50 tasks atomically
+  - `complete_tasks` — complete (or reopen) up to 100 tasks at once
+  - `delete_tasks` — permanently delete up to 50 tasks (all validated before any are deleted)
+  - `create_sections` — create up to 30 sections; duplicate names are returned as-is (`created: false`)
+  - `update_sections` — rename up to 30 sections atomically
+  - `create_comments` — add up to 50 comments to tasks at once
+  - `delete_comments` — delete up to 50 comments (all validated before any are deleted)
+
+  All batch tools return structured output with an `items` array. Errors include an `itemIndex` field identifying which item caused the failure.
+
+## 2026-06-07
+
 ### Improved
 
 - **`list_tasks` now supports a `limit` parameter** — pass `limit: N` to control how many tasks are returned (default: 100, max: 500). Previously all tasks were returned with no cap, which could produce very large responses for big projects.

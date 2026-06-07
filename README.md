@@ -63,6 +63,21 @@ All tools return structured output (JSON Schema defined via `outputSchema`), com
 | `create_comment` | Post a comment on a task |
 | `delete_comment` | Delete a comment |
 
+### Batch write tools (require `write` scope)
+
+Use batch tools when you need to create, update, or delete multiple items at once. They execute atomically and reduce the number of confirmation prompts in AI clients that ask once per tool call.
+
+| Tool | Limit | Description |
+|------|-------|-------------|
+| `create_tasks` | 50 | Create multiple tasks in a project at once |
+| `update_tasks` | 50 | Update multiple tasks at once |
+| `complete_tasks` | 100 | Complete (or reopen) multiple tasks at once |
+| `delete_tasks` | 50 | Permanently delete multiple tasks at once |
+| `create_sections` | 30 | Create multiple sections in a project at once |
+| `update_sections` | 30 | Rename multiple sections at once |
+| `create_comments` | 50 | Add multiple comments to tasks at once |
+| `delete_comments` | 50 | Delete multiple comments at once |
+
 ---
 
 ## Authentication
