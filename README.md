@@ -52,13 +52,13 @@ All tools return structured output (JSON Schema defined via `outputSchema`), com
 
 | Tool | Description |
 |------|-------------|
-| `create_task` | Create a task in a project section |
+| `create_task` | Create a task in a project section (use `update_task` for existing tasks) |
 | `update_task` | Update task name, status, assignee, section, or description |
 | `complete_task` | Mark a task as done or reopen it |
 | `delete_task` | Permanently delete a task |
-| `create_project` | Create a new project |
+| `create_project` | Create a new project — returns existing project if name already exists (`created: false`) |
 | `update_project` | Rename a project or update its description |
-| `create_section` | Add a section to a project |
+| `create_section` | Add a section to a project — returns existing section if name already exists (`created: false`) |
 | `update_section` | Rename a section |
 | `create_comment` | Post a comment on a task |
 | `delete_comment` | Delete a comment |
