@@ -43,7 +43,7 @@ All tools return structured output (JSON Schema defined via `outputSchema`), com
 | `list_workspaces` | List all workspaces you belong to |
 | `list_projects` | List projects in a workspace |
 | `list_sections` | List sections in a project |
-| `list_tasks` | List tasks in a project, or find by public number (`workspaceId + number`) |
+| `list_tasks` | List tasks in a project (up to 100 by default, configurable with `limit`), or find by public number (`workspaceId + number`) |
 | `get_task` | Get full task details — accepts internal ID, prefixed ref (`SCD-426`), or `workspaceId + number` |
 | `list_statuses` | List workflow statuses for a workspace |
 | `list_members` | List workspace members |

@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-06-07 (latest)
+
+### Improved
+
+- **`list_tasks` now supports a `limit` parameter** — pass `limit: N` to control how many tasks are returned (default: 100, max: 500). Previously all tasks were returned with no cap, which could produce very large responses for big projects.
+
 ## 2026-06-07
 
 ### Improved
