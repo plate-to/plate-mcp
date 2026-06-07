@@ -147,7 +147,7 @@
         "destructiveHint": false
       },
       "justifications": {
-        "read_only_justification": "Creates a new project document and a default section in the user's private workspace via a Firestore batch write.",
+        "read_only_justification": "Creates a new project and default section in the user's private workspace, or returns the existing project if one with the same name already exists (findOrCreate). Either way, writes only to the user's private data.",
         "open_world_justification": "Writes only to the user's private Plate workspace and does not publish content to any public URL or external system.",
         "destructive_justification": "Creates new records and does not delete, overwrite, or irreversibly alter existing data."
       }
@@ -171,7 +171,7 @@
         "destructiveHint": false
       },
       "justifications": {
-        "read_only_justification": "Creates a new section document in an existing project within the user's private workspace.",
+        "read_only_justification": "Creates a new section in an existing project, or returns the existing section if one with the same name already exists (findOrCreate). Either way, writes only to the user's private data.",
         "open_world_justification": "Writes only to the user's private Plate workspace and does not publish content to any public URL or external system.",
         "destructive_justification": "Creates a new record and does not delete, overwrite, or irreversibly alter existing data."
       }
@@ -259,7 +259,7 @@
       "user_prompt": "Create a project called 'Q3 Launch' in my workspace.",
       "file_attachment_urls": null,
       "tools_triggered": "list_workspaces, create_project",
-      "expected_output": "Returns the new project ID and the ID of the default 'To Do' section created alongside it.",
+      "expected_output": "Returns the project ID, the default section ID, and created: true if a new project was created, or created: false if a project with that name already existed.",
       "expected_output_url": null
     },
     {
