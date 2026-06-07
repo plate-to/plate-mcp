@@ -5,6 +5,7 @@
 ### Improved
 
 - **`list_tasks` now supports a `limit` parameter** — pass `limit: N` to control how many tasks are returned (default: 100, max: 500). Previously all tasks were returned with no cap, which could produce very large responses for big projects.
+- **`DELETE /mcp` now returns 405** instead of 404. The server runs in stateless mode and does not support session deletion. Clients that probe this method will receive a clean `405 Method Not Allowed` with an `Allow: GET, POST` header.
 
 ## 2026-06-07
 
