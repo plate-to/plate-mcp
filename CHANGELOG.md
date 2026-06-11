@@ -1,6 +1,16 @@
 # Changelog
 
-## 2026-06-07 (latest)
+## 2026-06-11 (latest)
+
+### Added
+
+- **`list_activity`** — task change history over a time range. Answers time-based questions like "which tasks were completed last week" or "what did a teammate do". Each row gives the task, the status transition, who made the change, and the task's owner and assignee. Filters: `from`/`to` (ISO dates), `actorId` (a userId), `type` (`task_status_changed`, or `completed` for transitions into a Done status), and `projectId`.
+
+### Fixed
+
+- Task changes made via the MCP server are now attributed to the signed-in user, so "what did &lt;person&gt; do" includes work done from ChatGPT/Claude/Cursor.
+
+## 2026-06-07
 
 ### Added
 
