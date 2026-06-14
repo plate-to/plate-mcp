@@ -94,7 +94,3 @@ To revoke access: **Workspace Settings → Apps** in Plate.
 Full tool reference and parameter details: [plate.to/docs/mcp](https://plate.to/docs/mcp)
 
 Questions: [hello@plate.to](mailto:hello@plate.to)
-
-## License
-
-[MIT](LICENSE) — but it applies **only to this repository** (the Plate MCP connector: the connection manifest and documentation). The Plate application, backend/API, and brand are proprietary and are not covered by this license.
