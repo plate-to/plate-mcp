@@ -1,6 +1,12 @@
 # Changelog
 
-## 2026-06-11 (latest)
+## 2026-06-25 (latest)
+
+### Added
+
+- **`list_comments`** — read a task's comments (oldest first). Pass the internal `taskId`; each comment returns `contentText` (Markdown, ready to display), the raw `content` (Plate nodes), `authorId`, and `createdAt`. Until now the MCP could post and delete comments but not read them.
+
+## 2026-06-11
 
 ### Added
 

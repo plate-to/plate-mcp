@@ -47,6 +47,7 @@ All tools return structured output (JSON Schema defined via `outputSchema`), com
 | `get_task` | Get full task details — accepts internal ID, prefixed ref (`SCD-426`), or `workspaceId + number` |
 | `list_statuses` | List workflow statuses for a workspace |
 | `list_members` | List workspace members |
+| `list_comments` | List a task's comments (oldest first) — each has `contentText` (Markdown) and `content` (Plate nodes). Pass the internal `taskId` |
 | `list_activity` | Task change history (status changes, assignments, etc.) over a time range — for "what was completed last week" or "what did &lt;person&gt; do". Filters: `from`/`to` (ISO dates), `actorId`, `type` (e.g. `completed`), `projectId` |
 
 ### Write tools (require `write` scope)
