@@ -1,6 +1,12 @@
 # Changelog
 
-## 2026-06-25 (latest)
+## 2026-07-03 (latest)
+
+### Fixed
+
+- **`list_sections`** now returns the default section as `"Things to do"`. A project's starting section has no stored name, so it used to come back with an empty `name` — invisible to reference by name. It's now labelled the same as in the app, so "add a task to Things to do" resolves.
+
+## 2026-06-25
 
 ### Added
 
