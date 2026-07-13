@@ -1,6 +1,15 @@
 # Changelog
 
-## 2026-07-03 (latest)
+## 2026-07-13 (latest)
+
+### Added
+
+- **Subtasks.** A task can now have subtasks — real tasks with their own number, status, and assignee, nested one level under a parent.
+  - **`create_task`** and **`create_tasks`** accept `parentTaskId`. Pass it (and omit `projectId`/`listId`) to create a subtask; it inherits the parent's project and has no section. You can't nest a subtask under a subtask.
+  - **`get_task`** now returns `parentTaskId` and a nested, ordered `subtasks` array.
+  - **`list_tasks`** excludes subtasks from a project's flat list; pass `parentId` to list a specific task's subtasks. Results include `parentTaskId`.
+
+## 2026-07-03
 
 ### Fixed
 
