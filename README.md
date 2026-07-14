@@ -43,8 +43,8 @@ All tools return structured output (JSON Schema defined via `outputSchema`), com
 | `list_workspaces` | List all workspaces you belong to |
 | `list_projects` | List projects in a workspace |
 | `list_sections` | List sections in a project |
-| `list_tasks` | List a project's top-level tasks (up to 100 by default, configurable with `limit`), find one by public number (`workspaceId + number`), or list a task's subtasks (`parentId`). Subtasks are excluded from the flat list |
-| `get_task` | Get full task details — accepts internal ID, prefixed ref (`SCD-426`), or `workspaceId + number`. Includes `parentTaskId` and a nested `subtasks` array |
+| `list_tasks` | List tasks in a project (up to 100 by default, configurable with `limit`), or find by public number (`workspaceId + number`) |
+| `get_task` | Get full task details — accepts internal ID, prefixed ref (`SCD-426`), or `workspaceId + number` |
 | `list_statuses` | List workflow statuses for a workspace |
 | `list_members` | List workspace members |
 | `list_comments` | List a task's comments (oldest first) — each has `contentText` (Markdown) and `content` (Plate nodes). Pass the internal `taskId` |
@@ -54,7 +54,7 @@ All tools return structured output (JSON Schema defined via `outputSchema`), com
 
 | Tool | Description |
 |------|-------------|
-| `create_task` | Create a task in a project section, or a subtask of another task (`parentTaskId`, omit project/section). Use `update_task` for existing tasks |
+| `create_task` | Create a task in a project section (use `update_task` for existing tasks) |
 | `update_task` | Update task name, status, assignee, section, or description |
 | `complete_task` | Mark a task as done or reopen it |
 | `delete_task` | Permanently delete a task |
@@ -71,7 +71,7 @@ Use batch tools when you need to create, update, or delete multiple items at onc
 
 | Tool | Limit | Description |
 |------|-------|-------------|
-| `create_tasks` | 50 | Create multiple tasks in a project at once, or as subtasks of one task (`parentTaskId`) |
+| `create_tasks` | 50 | Create multiple tasks in a project at once |
 | `update_tasks` | 50 | Update multiple tasks at once |
 | `complete_tasks` | 100 | Complete (or reopen) multiple tasks at once |
 | `delete_tasks` | 50 | Permanently delete multiple tasks at once |
