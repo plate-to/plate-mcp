@@ -1,6 +1,12 @@
 # Changelog
 
-## 2026-07-03 (latest)
+## 2026-07-28 (latest)
+
+### Fixed
+
+- Multi-line Markdown blockquotes (consecutive `>` lines) in task descriptions and comments now render as a single quote block instead of one visually separate quote per line. Reading a description back returns the same multi-line `>` form.
+
+## 2026-07-03
 
 ### Fixed
 
