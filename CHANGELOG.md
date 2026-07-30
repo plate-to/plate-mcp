@@ -1,6 +1,20 @@
 # Changelog
 
-## 2026-07-28 (latest)
+## 2026-07-30 (latest)
+
+### Added
+
+- **`list_labels`** — read a workspace's task labels (`id`, `name`, `color`, `order`). Labels are addressed by id, so this is what makes the new `labels` field usable.
+- **Labels can now be set on tasks.** `create_task`, `update_task`, `create_tasks` and `update_tasks` all accept a `labels` array. Each entry may be a label **id or its name** (matched case-insensitively), so `labels: ["Bug"]` works without looking anything up first.
+  - On `update_task` / `update_tasks`, `labels` **replaces** the task's labels rather than adding to them; pass `[]` to clear them.
+  - An unknown label is an error, not a new label — nothing is created automatically, so a typo can't leave stray labels behind. The error lists the labels that do exist so you can retry with the right one.
+  - Labels themselves (creating, renaming, recolouring, deleting) are still managed in the Plate app under Workspace settings → Labels.
+
+### Changed
+
+- **`list_tasks`** now includes each task's `labels`. `get_task` already returned them.
+
+## 2026-07-28
 
 ### Fixed
 

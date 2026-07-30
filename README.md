@@ -46,6 +46,7 @@ All tools return structured output (JSON Schema defined via `outputSchema`), com
 | `list_tasks` | List tasks in a project (up to 100 by default, configurable with `limit`), or find by public number (`workspaceId + number`) |
 | `get_task` | Get full task details — accepts internal ID, prefixed ref (`SCD-426`), or `workspaceId + number` |
 | `list_statuses` | List workflow statuses for a workspace |
+| `list_labels` | List task labels for a workspace — use the returned `id` (or the `name`) in `labels` when creating or updating tasks |
 | `list_members` | List workspace members |
 | `list_comments` | List a task's comments (oldest first) — each has `contentText` (Markdown) and `content` (Plate nodes). Pass the internal `taskId` |
 | `list_activity` | Task change history (status changes, assignments, etc.) over a time range — for "what was completed last week" or "what did &lt;person&gt; do". Filters: `from`/`to` (ISO dates), `actorId`, `type` (e.g. `completed`), `projectId` |
@@ -55,7 +56,7 @@ All tools return structured output (JSON Schema defined via `outputSchema`), com
 | Tool | Description |
 |------|-------------|
 | `create_task` | Create a task in a project section (use `update_task` for existing tasks) |
-| `update_task` | Update task name, status, assignee, section, or description |
+| `update_task` | Update task name, status, assignee, section, description, or labels |
 | `complete_task` | Mark a task as done or reopen it |
 | `delete_task` | Permanently delete a task |
 | `create_project` | Create a new project — returns existing project if name already exists (`created: false`) |
